@@ -9,45 +9,45 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.webkit.CookieManager;
-import android.webkit.DownloadListener;
-import android.webkit.JavascriptInterface;
 import android.webkit.WebChromeClient;
 import android.webkit.WebResourceError;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
-import android.webkit.WebView.WebViewTransport;
 import android.webkit.WebViewClient;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import com.project.auction.R;
 
-class JsObject {
-  @JavascriptInterface
-  void start(String token) {
-    PwaAuctionActivity.syncPWA();
-  }
-
-  @JavascriptInterface
-  override fun toString(): String {
-    return "injectedObject"
-  }
-}
+//class JsObject {
+//  @JavascriptInterface
+//  void start(String token) {
+//    PwaAuctionActivity.syncPWA();
+//  }
+//
+//  @JavascriptInterface
+//  override fun toString(): String {
+//    return "injectedObject"
+//  }
+//}
 
 public class PwaAuctionActivity extends AppCompatActivity {
-
-  private WebView webView;
 
   private final boolean ENABLE_MIXED_CONTENT = true;
   private final boolean POSTFIX_USER_AGENT = true;
   private final boolean OVERRIDE_USER_AGENT = true;
-
   private final String WEBAPP_URL = "http://auctionsale.xyz/auction";
   private final String USER_AGENT_POSTFIX = "Android App";
-  private final String USER_AGENT = "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Mobile Safari/537.36";
+  private final String USER_AGENT =
+      "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Mobile Safari/537.36";
+  private WebView webView;
 
   @Override protected void onCreate(
       @Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
+
+    setContentView(R.layout.activity_webview);
+    webView = findViewById(R.id.webview);
 
     setupWebView();
     loadHome();
@@ -96,20 +96,20 @@ public class PwaAuctionActivity extends AppCompatActivity {
       webSettings.setUserAgentString(userAgent);
     }
 
-    webView.setWebChromeClient(new WebChromeClient(){
+    webView.setWebChromeClient(new WebChromeClient() {
       @Override public boolean onCreateWindow(
           WebView view,
           boolean isDialog,
           boolean isUserGesture,
           Message resultMsg) {
-        WebView newWebView = new WebView((PwaAuctionActivity)this);
-
-        WebSettings webSettings = newWebView.getSettings();
-        webSettings.setJavaScriptEnabled(true);
-
-        newWebView.setWebChromeClient(new WebChromeClient() {});
-        ((WebViewTransport) resultMsg.obj).getWebView() = newWebView;
-        resultMsg.sendToTarget();
+        //WebView newWebView = new WebView((PwaAuctionActivity)this);
+        //
+        //WebSettings webSettings = newWebView.getSettings();
+        //webSettings.setJavaScriptEnabled(true);
+        //
+        //newWebView.setWebChromeClient(new WebChromeClient() {});
+        //((WebViewTransport) resultMsg.obj).getWebView() = newWebView;
+        //resultMsg.sendToTarget();
         return true;
       }
     });
@@ -145,14 +145,12 @@ public class PwaAuctionActivity extends AppCompatActivity {
       startActivity(i);
     });
 
-    webView.addJavascriptInterface(new JsOb(this), "AuctionSale");
+    //webView.addJavascriptInterface(new JsOb(this), "AuctionSale");
   }
-
 
   private void handleLoadError(int errorCode) {
     new Handler().postDelayed(this::onBackPressed, 100);
   }
-
 
   private void loadHome() {
     webView.loadUrl(WEBAPP_URL);

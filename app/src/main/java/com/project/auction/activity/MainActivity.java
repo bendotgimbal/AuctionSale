@@ -40,7 +40,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         startActivity(auction);
         break;
       case R.id.btnHistory:
-        //TODO
+        Intent webview = new Intent(this, PwaAuctionActivity.class);
+        startActivity(webview);
         break;
     }
   }
