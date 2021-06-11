@@ -15,7 +15,9 @@
     android:usesCleartextTraffic="true"
     tools:ignore="AllowBackup"
     tools:targetApi="m">
-    <activity android:name=".activity.LoginActivity">
+    <activity
+      android:name=".activity.ProductActivity"
+      android:theme="@style/AppTheme.NoActionBar">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
 
@@ -29,8 +31,8 @@
       android:name=".activity.CountDown"
       android:label="@string/title_countdown" />
     <activity
-      android:name=".activity.ProductActivity"
-      android:label="@string/title_product"/>
+      android:name=".activity.LoginActivity"
+      android:label="@string/title_product" />
 
     <!-- Firebase Notifications -->
     <service

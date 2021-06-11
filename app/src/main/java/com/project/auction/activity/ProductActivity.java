@@ -28,24 +28,16 @@ public class ProductActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_product);
 
-    myWebView = (WebView) findViewById(R.id.webview);
+    myWebView = findViewById(R.id.webview);
     myWebView.setWebViewClient(new WebViewClient());
     WebSettings webSettings = myWebView.getSettings();
     webSettings.setJavaScriptEnabled(true);
-    myWebView.loadUrl("http://10.4.56.104/auctionapp");
+    myWebView.loadUrl("http://bid.auctionsale.xyz/");
   }
 
   @RequiresApi(api = Build.VERSION_CODES.KITKAT)
   @Override
   public void onBackPressed() {
-    //myWebView.evaluateJavascript("canGoBack();", s -> {
-    //  if (Boolean.parseBoolean(s)) {
-    //    myWebView.goBack();
-    //  } else {
-    //    super.onBackPressed();
-    //  }
-    //});
-
     if (myWebView.canGoBack()) {
       myWebView.goBack();
     } else {
