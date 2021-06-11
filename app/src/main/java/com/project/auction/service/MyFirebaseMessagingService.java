@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
-import com.project.auction.activity.MainActivity;
+import com.project.auction.activity.SplashActivity;
 import com.project.auction.app.Config;
 import com.project.auction.util.NotificationUtils;
 import org.json.JSONException;
@@ -113,7 +113,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         notificationUtils.playNotificationSound();
       } else {
         // app is in background, show the notification in notification tray
-        Intent resultIntent = new Intent(getApplicationContext(), MainActivity.class);
+        Intent resultIntent = new Intent(getApplicationContext(), SplashActivity.class);
         resultIntent.putExtra("message", message);
 
         // check for image attachment

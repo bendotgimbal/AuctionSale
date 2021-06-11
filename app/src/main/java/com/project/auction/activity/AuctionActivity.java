@@ -1,24 +1,17 @@
 package com.project.auction.activity;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.webkit.ValueCallback;
-import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import androidx.annotation.RequiresApi;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import android.view.View;
 
 import com.project.auction.R;
 
-public class ProductActivity extends AppCompatActivity {
+public class AuctionActivity extends AppCompatActivity {
 
   private WebView myWebView;
 
@@ -26,7 +19,7 @@ public class ProductActivity extends AppCompatActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_product);
+    setContentView(R.layout.activity_auction);
 
     myWebView = findViewById(R.id.webview);
     myWebView.setWebViewClient(new WebViewClient());

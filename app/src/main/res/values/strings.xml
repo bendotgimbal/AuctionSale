@@ -1,15 +1,5 @@
 <resources>
-  <string name="app_name">PNK</string>
-  <string name="title_main">Pemasaran Nelayan Kecil</string>
-  <string name="title_login">Login</string>
+  <string name="app_name">APNK</string>
+  <string name="title_main">Aplikasi Pemasaran Nelayan Kecil</string>
   <string name="title_countdown">Hitungan Mundur</string>
-  <string name="title_product">Penjualan Saya</string>
-
-  <string name="label_name">Nama</string>
-  <string name="helper_name">Masukan nama Anda</string>
-  <string name="label_password">Kata Sandi</string>
-  <string name="helper_password">Masukan kata sandi Anda</string>
-
-  <string name="label_login_button">Login</string>
-
 </resources>

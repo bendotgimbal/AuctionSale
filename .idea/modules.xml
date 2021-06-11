@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AuctionSale.iml" filepath="$PROJECT_DIR$/.idea/modules/AuctionSale.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AuctionSale.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AuctionSale.app.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/StudioProjects.AuctionSale.iml" filepath="$PROJECT_DIR$/.idea/modules/StudioProjects.AuctionSale.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/StudioProjects.AuctionSale.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/StudioProjects.AuctionSale.app.iml" />
     </modules>
